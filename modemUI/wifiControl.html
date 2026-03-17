@@ -1,0 +1,311 @@
+<body>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav pull-right">
+                <li>
+                   <a href="/" id="signout"><i class="icon-lock"></i> Logout</a> 
+                </li>
+                <li>
+                    <a href="#" onclick="javascript:window.open('/helpfiles/help_home.lp', 'Help', 'width=1050, height=600, top=50, left=150, scrollbars=yes, resizable=yes')"><i class="icon-question-sign"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div><div class="container">
+    <div class="row">
+        <div class="menubar">
+
+<div class="menu-item"><a id="home" href="/home.lp" target="_self"><div class="menu-icon home "></div><div class="menu-text">HOME</div></a></div><div class="menu-item"><a id="broadband" href="/broadband.lp" target="_self"><div class="menu-icon broadband "></div><div class="menu-text">BROADBAND</div></a></div><div class="menu-item"><a id="wifi" href="/wifi.lp?radio=2.4" target="_self"><div class="menu-icon wifi selected"></div><div class="menu-text">WI-FI</div></a></div><div class="menu-item"><a id="contentsharing" href="/contentsharing.lp" target="_self"><div class="menu-icon contentsharing "></div><div class="menu-text">CONTENT SHARING</div></a></div><div class="menu-item"><a id="tod" href="/tod.lp" target="_self"><div class="menu-icon tod "></div><div class="menu-text">PARENTAL CONTROL</div></a></div><div class="menu-item"><a id="dyndns" href="/dyndns.lp" target="_self"><div class="menu-icon dyndns "></div><div class="menu-text">SERVICES</div></a></div><div class="menu-item"><a id="admin" href="/user.lp" target="_self"><div class="menu-icon admin "></div><div class="menu-text">USER SETTINGS</div></a></div><div class="menu-item"><a id="gateway" href="/gateway.lp" target="_self"><div class="menu-icon gateway "></div><div class="menu-text">ADVANCED</div></a></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+
+<div class="message"><img class="ok" src="img/status.png">Your Broadband service is working normally. You are connected online.</div>
+    </div>
+</div>
+
+
+<div class="container toplevel">
+    <ul class="nav nav-tabs">
+
+<li class=""><a id="2.4GHz" href="wifi.lp?radio=2.4" target="_self">2.4GHz</a></li><li class=""><a id="5GHz" href="wifi.lp?radio=5" target="_self">5GHz</a></li><li class=""><a id="Guest1" href="wifiguest.lp?guest=2g_1" target="_self">Guest1</a></li><li class="active"><a id="Guest1_5G" href="wifiguest.lp?guest=5g_1" target="_self">Guest1_5G</a></li>
+
+</ul>
+
+    <div class="row">
+        <div class="span11">
+
+<form class="form-horizontal" method="post" action="/wifiguest.lp?guest=5g_1">
+
+
+
+<fieldset>
+<legend>Wi-Fi Radio</legend>
+
+<div class="control-group"><label class="control-label">Enabled</label><div class="controls"><label class="hide checkbox"><input type="checkbox" name="interface_enabled" value="_DUMMY_" checked=""></label><label class="checkbox"><input id="interface_enabled" type="checkbox" name="interface_enabled" disabled="disabled" value="_TRUE_" checked=""> </label></div></div>
+</fieldset>
+
+<fieldset>
+<legend>Wi-Fi Channel</legend>
+
+<div class="control-group"><label class="control-label">MAC Address</label><div class="controls"><span id="MAC Address" class="span2 simple-desc">12:13:31:dc:17:19</span></div></div><div class="control-group"><label class="control-label">Speed</label><div class="controls"><span id="Speed" class="span2 simple-desc">195Mbps</span></div></div><div class="control-group"><label class="control-label">Current Channel</label><div class="controls"><span id="Current Channel" class="span2 simple-desc">56</span></div></div><div class="control-group"><label class="control-label">Channel Width</label><div class="controls"><span id="Channel Width" class="span2 simple-desc">auto</span></div></div>
+</fieldset>
+
+<fieldset>
+<legend>Wi-Fi Network</legend>
+
+<div class="control-group"><label class="control-label">Enabled</label><div class="controls"><label class="hide checkbox"><input type="checkbox" name="ap_enabled" value="_DUMMY_" checked=""></label><label class="checkbox"><input id="ap_enabled" type="checkbox" name="ap_enabled" class="monitor-changes" value="_TRUE_" checked=""> </label></div></div><div class="control-group"><label class="control-label">Network Name</label><div class="controls"><input type="text" name="ssid" pattern="[!-~][ -~]{0,30}[!-~]" value="vincejenny5" class="edit-input  span4" maxlength="32" id="ssid"></div></div><div class="control-group "><label class="control-label">Security Mode</label><div class="controls"><select id="security" class="span3 monitor-changes" name="security"><option value="none">None</option><option value="wpa2-psk" selected="selected">WPA2 PSK</option><option value="wpa-wpa2-psk">WPA+WPA2 PSK</option></select></div></div><div class="alert  alert-error monitor-security monitor-none monitor-hidden-security" style="display: none;">Security for this Wi-Fi network is disabled, anybody can connect or listen to it</div><div class="control-group monitor-security monitor-wep monitor-hidden-security" style="display: none;"><label class="control-label">WEP Key</label><div class="controls"><input type="text" name="wep_key" value="7D8BE279A6" class="edit-input  span4" id="wep_key"></div></div><div class="control-group monitor-security monitor-wpa-psk monitor-wpa2-psk monitor-wpa-wpa2-psk monitor-show-security" style=""><label class="control-label">Network Key</label><div class="controls"><input type="text" name="wpa_psk" value="0934286629" class="edit-input  span4" id="wpa_psk"></div></div><div class="control-group monitor-security monitor-wpa3 monitor-wpa3-psk monitor-wpa2-wpa3 monitor-wpa2-wpa3-psk monitor-hidden-security" style="display: none;"><label class="control-label">Network Key</label><div class="controls"><input type="text" name="wpa3" id="wpa3" class="edit-input  span4" maxlength="63"></div></div><div class="control-group"><label class="control-label">Band Steering Enabled</label><div class="controls"><span id="Band Steering Enabled" class="span2 simple-desc">No</span></div></div>
+</fieldset>
+</form>
+
+<div id="form-changes" class="hide">
+    <div id="cancel-config" class="btn btn-large">Cancel</div>
+    <div id="save-config" class="btn btn-primary btn-large">Save</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="container">
+   
+    <div class="row">
+        <br>
+        <div class="networkmap span11" id="networkmap">
+            <div align="right">
+                            <span class="modal-action-refresh" id="Refresh_id"><i class="icon-refresh"></i> refresh data</span>
+                        </div><table class="table">
+                <tbody>
+                    <tr>
+                        
+                        <td colspan="8">
+                            
+                            <div class="device">
+                                <img class="devicepicture" src="img/globe.png">
+                                <div class="deviceinfo right hoveronly">WAN IP: <font color="green"><strong>175.34.44.44</strong></font><br>Conn. type: Ethernet</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="border-right-style:solid">&nbsp;</td>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            <div id="gateway" class="device">
+                                 <div class="deviceinfo left hoveronly">Wi-Fi Name: vincejenny5<br>Wi-Fi Key: 0934286629<br>Wi-Fi Status: On<br>Wi-Fi Link Speed: 195 Mbps</div>
+                                <img class="devicepicture" src="img/gw-telstra.png">
+                                <div class="deviceinfo right hoveronly">Router IP: 192.168.0.1<br>Hostname: mymodem<br>FW Version: 20.3.c.0432</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="border-right-style:solid">&nbsp;</td>
+                        <td colspan="3" style="border-bottom-style:solid" class="dectLineRemoval">&nbsp;</td>
+                        <td colspan="1">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td colspan="2" style="border-style:dashed none none dashed">&nbsp;</td>
+                        <td colspan="1" style="border-style:dashed solid solid none">&nbsp;</td>
+                        <td colspan="1" style="border-bottom-style:solid">&nbsp;</td>
+                        <td colspan="2" style="border-bottom-style:none">&nbsp;</td>
+                        <td colspan="1" style="border-left-style:solid" class="dectLineRemoval">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td style="border-style:none none none dashed">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="2" style="border-style:none solid none solid">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td style="border-style:none solid none none" class="dectLineRemoval">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="networkinterface">
+                            <div class="devicelist">
+                                <div class="interface-name">Wi-Fi</div>
+                                <div>
+                                    <div class="device"><a href="/device.lp?mac=00:72:ee:d4:53:8c&amp;wireless=1&amp;ticked="><img src="img/dev_laptop.gif"></a><div class="showdeviceinfo right">LAN IP: 192.168.2.246<br>Device Name: KT-LAPTOP<br>Link Speed:  Mbps</div><div><br></div></div><div class="device"><a href="/device.lp?mac=50:23:6d:65:6e:33&amp;wireless=1&amp;ticked="><img src="img/dev_laptop.gif"></a><div class="showdeviceinfo right">LAN IP: 192.168.2.205<br>Device Name: Unknown-50:23:6d:65:6e:33<br>Link Speed:  Mbps</div><div><br></div></div><div class="device"><a href="/device.lp?mac=24:eb:16:93:a5:f3&amp;wireless=1&amp;ticked="><img src="img/dev_laptop.gif"></a><div class="showdeviceinfo right">LAN IP: 192.168.2.252<br>Device Name: WQ0519<br>Link Speed:  Mbps</div><div><br></div></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="2" class="networkinterface">
+                            <div class="devicelist">
+                                <div class="interface-name">Ethernet/Wired</div>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="2" class="networkinterface">
+                            <div class="devicelist">
+                                <div class="interface-name">USB</div>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="2" class="networkinterface" id="dectRemoval" style="display: table-cell;">
+                            <div class="devicelist">
+                                <div class="interface-name">DECT</div>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div align="right">
+                
+                    <div>
+                        <input id="hide-unhide-non-connected-device" class="btn" "="" value="Hide non-connected Device">
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/srp-min.js"></script>
+<script type="text/javascript">
+    var dectCheck = 1
+    if (dectCheck == "0") {
+      $(".dectLineRemoval").css("border-color", "white");
+      $("#dectRemoval").css("display", "none");
+    }else{
+      $(".dectLineRemoval").css("border-color", "#004D9D;");
+      $("#dectRemoval").css("display", "table-cell");
+    }
+    var hoveronly_flag = false;
+    function showhideTooltips()
+    {
+        hoveronly_flag = false;
+        setTimeout(function() {
+            $(".deviceinfo").addClass("hoveronly");
+            $("#ap_info").addClass("hoveronly");
+            hoveronly_flag = true;
+        }, 15000);
+    }
+
+    $(window).load(function() {
+        showhideTooltips();
+    });
+    $(window).resize(function() {
+        showhideTooltips();
+    });
+
+    $("#gateway").mouseover(function(){
+        if (hoveronly_flag) {
+           $("#ap_info").removeClass("hoveronly");
+           $("#ap_info").addClass("showinfo");
+        }
+      });
+
+    $("#gateway").mouseout(function(){
+        if (hoveronly_flag) {
+           $("#ap_info").removeClass("showinfo");
+           $("#ap_info").addClass("hoveronly");
+        }
+      });
+
+    $(document).on("click", "#hide-unhide-non-connected-device", function() {
+        var button = $(this);
+        var button_text = button.val();
+        var hide_non_connected_device = 0;
+        if(button_text == "Hide non-connected Device")  {
+            button.val("Unhide non-connected Device");
+            hide_non_connected_device = 1;
+        } else {
+            button.val("Hide non-connected Device");
+            hide_non_connected_device = 0;
+        }
+        button_new_text = button.val();
+        var form = $("form");
+        var params = form.serializeArray();
+        params.push({
+            name : "hide_unhide_non_connected_device",
+            value : hide_non_connected_device
+        });
+        params.push({
+            name : "button_new_text",
+            value : button_new_text
+        });
+        params.push(tch.elementCSRFtoken());
+        var target = form.attr("action");
+        tch.postParams(target,params);
+        }
+    );
+
+    $(document).on("click", "#delete-non-connected-device", function() {
+        var form = $("form");
+        var params = form.serializeArray();
+        params.push({
+            name : "delete_non_connected_device",
+            value : 1
+        });
+        params.push({
+            name : "action",
+            value : "SAVE"
+        });
+        params.push(tch.elementCSRFtoken());
+        var target = form.attr("action");
+        tch.postParams(target,params);
+        }
+    );
+
+$("#Refresh_id").click(function(){
+    $.get('/home.lp', function(data) {
+        $('html').html(data);
+    });
+    return false;
+});
+
+$("#Refresh_id").mouseout(function(){
+    $(".icon-refresh").css({"transform":"rotate(0deg)","transition": "0.1s","color":"#333333"})
+});
+
+$("#Refresh_id").mouseover(function(){
+    $("#Refresh_id").css({"cursor":"pointer"})
+    $(".icon-refresh").css({"transform": "rotate(180deg)","transition":"0.1s", "color": "#3B3B3B"});
+});
+
+</script>
+
+<style>
+    .icon-refresh {
+        display: inline-block;
+    }
+    html {
+        font-family: Helvetica,Arial,sans-serif !important;
+        font-size: 14px;
+        color: #3B3B3B;
+        font-weight: normal;
+    }
+</style>
+
+
+<script>
+var bschecked = $('input[id="band_steer_supported"]').prop("checked");
+$(document).ready(function() {
+    if (true == bschecked) {
+        $('option[value="wep"]').hide();
+    }
+});
+
+$('input[id="band_steer_supported"]').click(function(){
+    if (true == bschecked) {
+        $('option[value="wep"]').hide();
+    }
+});
+</script>
+<div class="apprise-overlay" style="opacity: 0.94;"></div><div class="apprise"></div><div class="dw-hidden" role="alert"></div></body>
