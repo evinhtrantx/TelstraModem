@@ -1,5 +1,6 @@
 """CLI script to login and control guest WiFi."""
 
+import os
 import sys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,17 +10,17 @@ from wifi.ctl import HostInfo, LoginPage, create_chrome_driver
 
 
 def main():
-    if len(sys.argv) != 4:
-        print("Usage: python -m myapp <on|off> <username> <password>")
+    if len(sys.argv) != 2:
+        print("Usage: python -m myapp <on|off|toggle>")
         sys.exit(1)
 
     action = sys.argv[1].lower()
-    if action not in ('on', 'off'):
-        print("First argument must be 'on' or 'off'")
+    if action not in ('on', 'off', 'toggle'):
+        print("First argument must be 'on', 'off', or 'toggle'")
         sys.exit(1)
 
-    username = sys.argv[2]
-    password = sys.argv[3]
+    username = HostInfo.USERNAME
+    password = os.environ['GATEWAY_PASSWORD']
 
     driver = create_chrome_driver(headless=True)
     try:
@@ -28,7 +29,7 @@ def main():
         page = LoginPage(driver)
         success = page.login(login_url, username, password)
         if not success:
-            print("Login failed")
+            print("Login failed. Check credentials and try again.")
             return
 
         # Navigate to WiFi control page
@@ -45,7 +46,9 @@ def main():
             checkbox.click()
         elif action == 'off' and checkbox.is_selected():
             checkbox.click()
-
+        elif action == 'toggle':
+            checkbox.click()
+        
         # Click Save
         save_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.ID, "save-config"))
