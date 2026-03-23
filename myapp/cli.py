@@ -36,18 +36,18 @@ def main():
         wifi_url = HostInfo.BASE + HostInfo.WIFI_CONTROL_PATH
         driver.get(wifi_url)
 
-        # Get the checkbox
-        checkbox = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.ID, "ap_enabled"))
+        # Get the textbox
+        textbox = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "wpa_psk"))
         )
-
+        # Set the textbox value
+        textbox.clear()
+        textbox_value = textbox.get_attribute("value")
         # Toggle based on action
-        if action == 'on' and not checkbox.is_selected():
-            checkbox.click()
-        elif action == 'off' and checkbox.is_selected():
-            checkbox.click()
-        elif action == 'toggle':
-            checkbox.click()
+        if action == 'on' and textbox_value != "0934286629":
+            textbox.send_keys("0934286629")
+        elif action == 'off' and textbox_value != "0934286628":
+            textbox.send_keys("0934286628")
         
         # Click Save
         save_button = WebDriverWait(driver, 10).until(
